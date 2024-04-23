@@ -44,23 +44,21 @@ public class Employee {
 	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
 	 */
 	
-	public void setMonthlySalary(int grade) {	
-		if (grade == 1) {
-			monthlySalary = 3000000;
-			if (isForeigner) {
-				monthlySalary = (int) (3000000 * 1.5);
-			}
-		}else if (grade == 2) {
-			monthlySalary = 5000000;
-			if (isForeigner) {
-				monthlySalary = (int) (3000000 * 1.5);
-			}
-		}else if (grade == 3) {
-			monthlySalary = 7000000;
-			if (isForeigner) {
-				monthlySalary = (int) (3000000 * 1.5);
-			}
-		}
+	 public enum Grade {
+        GRADE_1,
+        GRADE_2,
+        GRADE_3
+    }
+	 
+	public void setMonthlySalary(Grade grade) {
+		// Array untuk menyimpan nilai gaji berdasarkan grade
+		int[] salaries = {3000000, 5000000, 7000000};
+		
+		// Mendapatkan indeks array berdasarkan grade
+		int index = grade.ordinal();
+		
+		// Mengatur gaji bulanan sesuai dengan grade
+		monthlySalary = isForeigner ? (int) (salaries[index] * 1.5) : salaries[index];
 	}
 	
 	public void setAnnualDeductible(int deductible) {	
