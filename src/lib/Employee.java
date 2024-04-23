@@ -51,13 +51,16 @@ public class Employee {
     }
 	 
 	public void setMonthlySalary(Grade grade) {
-        int baseSalary = switch (grade) {
-            case GRADE_1 -> 3000000;
-            case GRADE_2 -> 5000000;
-            case GRADE_3 -> 7000000;
-        };
-        monthlySalary = isForeigner ? (int) (baseSalary * 1.5) : baseSalary;
-    }
+		// Array untuk menyimpan nilai gaji berdasarkan grade
+		int[] salaries = {3000000, 5000000, 7000000};
+		
+		// Mendapatkan indeks array berdasarkan grade
+		int index = grade.ordinal();
+		
+		// Mengatur gaji bulanan sesuai dengan grade
+		monthlySalary = isForeigner ? (int) (salaries[index] * 1.5) : salaries[index];
+	}
+	
 	
 	public void setAnnualDeductible(int deductible) {	
 		this.annualDeductible = deductible;
