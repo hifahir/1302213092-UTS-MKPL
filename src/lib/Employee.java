@@ -26,7 +26,7 @@ public class Employee {
     private List<String> childNames;
     private List<String> childIdNumbers;
 
-    public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, LocalDate joinedDate, boolean isForeigner, Gender gender) {
+    public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, LocalDate joinedDate, boolean isForeigner) {
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
