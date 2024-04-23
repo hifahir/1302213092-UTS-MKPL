@@ -82,6 +82,6 @@ public class Employee {
 	
 	public int getAnnualIncomeTax() {
         int monthsWorked = Math.min(12, LocalDate.now().getMonthValue() - joinedDate.getMonthValue() + 1);
-        return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthsWorked, annualDeductible, spouseIdNumber.equals(""), childIdNumbers.size());
+        return TaxFunction.calculateAnnualIncomeTax(monthlySalary, otherMonthlyIncome, monthsWorked, annualDeductible, spouseIdNumber.equals(""), childIdNumbers.size());
     }
 }
